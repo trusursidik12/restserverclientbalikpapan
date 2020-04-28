@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . 'libraries/RestController.php';
 require APPPATH . 'libraries/Format.php';
 
-class Cemsdata extends RestController {
+class Aqmsdata extends RestController {
 
     public function __construct()
     {
