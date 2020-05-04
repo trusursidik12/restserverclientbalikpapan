@@ -2,7 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$route['ajax/get/aqmsdata']				= 'ajax/get_ajax';
+// $route['ajax/get/aqmsdata2']				= 'ajax/get_ajax2';
+$route['ajax/get/aqmsispu']				= 'ajax/get_ajax_ispu';
+$route['ajax/get/aqmsdata']				= 'ajax/get_ajax_data';
 
 $route['api/get/aqmsdata/bb']			= 'api/aqmsbalikpapanbbdata';
 $route['api/get/aqmsispu/bb']			= 'api/aqmsbalikpapanbbispu';
