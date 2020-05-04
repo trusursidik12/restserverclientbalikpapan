@@ -11,7 +11,8 @@ class Ajax_m extends CI_Model
         $this->db->distinct('id_stasiun, waktu, pm25, so2, no2');
 		$this->db->group_by('id_stasiun, waktu, pm25, so2, no2'); 
         $this->db->from('aqm_data');
-        $this->db->where('id_stasiun', 'BALIKPAPAN_BB');
+        $this->db->where('id_stasiun', 'BALIKPAPAN_PB');
+        $this->db->or_where('id_stasiun', 'BALIKPAPAN_BB');
         $i = 0;
         foreach ($this->column_search as $item) { // loop column
             if(@$_POST['search']['value']) { // if datatable send POST for search
