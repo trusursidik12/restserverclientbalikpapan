@@ -9,10 +9,10 @@ class Aqms_m extends CI_Model
 			$this->db->order_by('id', 'DESC');
 			$this->db->where('id_stasiun', 'BALIKPAPAN_BB');
 			$this->db->limit('1');
-			$query = $this->db->get('bp_data');
+			$query = $this->db->get('aqm_data');
 			return $query->result_array();
 		}
-		$query = $this->db->get_where('bp_data', array('id' => $id));
+		$query = $this->db->get_where('aqm_data', array('id' => $id));
 		return $query->row_array();
 	}
 
@@ -22,10 +22,10 @@ class Aqms_m extends CI_Model
 			$this->db->order_by('id', 'DESC');
 			$this->db->where('id_stasiun', 'BALIKPAPAN_BB');
 			$this->db->limit('1');
-			$query = $this->db->get('bp_ispu');
+			$query = $this->db->get('aqm_ispu');
 			return $query->result_array();
 		}
-		$query = $this->db->get_where('bp_ispu', array('id' => $id));
+		$query = $this->db->get_where('aqm_ispu', array('id' => $id));
 		return $query->row_array();
 	}
 
@@ -35,10 +35,10 @@ class Aqms_m extends CI_Model
 			$this->db->order_by('id', 'DESC');
 			$this->db->where('id_stasiun', 'BALIKPAPAN_PB');
 			$this->db->limit('1');
-			$query = $this->db->get('bp_data');
+			$query = $this->db->get('aqm_data');
 			return $query->result_array();
 		}
-		$query = $this->db->get_where('bp_data', array('id' => $id));
+		$query = $this->db->get_where('aqm_data', array('id' => $id));
 		return $query->row_array();
 	}
 
@@ -48,16 +48,15 @@ class Aqms_m extends CI_Model
 			$this->db->order_by('id', 'DESC');
 			$this->db->where('id_stasiun', 'BALIKPAPAN_PB');
 			$this->db->limit('1');
-			$query = $this->db->get('bp_ispu');
+			$query = $this->db->get('aqm_ispu');
 			return $query->result_array();
 		}
-		$query = $this->db->get_where('bp_ispu', array('id' => $id));
+		$query = $this->db->get_where('aqm_ispu', array('id' => $id));
 		return $query->row_array();
 	}
 
 	public function add_aqms_data()
 	{
-		date_default_timezone_set("Asia/Bangkok");
 		$data = array(
 			'id_stasiun' 		=> $this->input->post('id_stasiun'),
 			'waktu' 			=> $this->input->post('waktu'),
@@ -65,6 +64,6 @@ class Aqms_m extends CI_Model
 			'so2' 				=> $this->input->post('so2'),
 			'no2' 				=> $this->input->post('no2')
 		);
-		return $this->db->insert('bp_data', $data);
+		return $this->db->insert('aqm_data', $data);
 	}
 }

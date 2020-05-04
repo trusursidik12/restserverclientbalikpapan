@@ -10,7 +10,7 @@ class Ajax_m extends CI_Model
     private function _get_datatables_query() {
         $this->db->distinct('id_stasiun, waktu, pm25, so2, no2');
 		$this->db->group_by('id_stasiun, waktu, pm25, so2, no2'); 
-        $this->db->from('bp_data');
+        $this->db->from('aqm_data');
         $i = 0;
         foreach ($this->column_search as $item) { // loop column
             if(@$_POST['search']['value']) { // if datatable send POST for search
@@ -46,7 +46,7 @@ class Ajax_m extends CI_Model
         return $query->num_rows();
     }
     function count_all() {
-        $this->db->from('bp_data');
+        $this->db->from('aqm_data');
         return $this->db->count_all_results();
     }
     // end datatables
